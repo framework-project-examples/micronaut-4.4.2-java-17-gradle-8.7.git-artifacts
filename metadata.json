@@ -1,12 +1,11 @@
 {
-  "versionId" : 3,
+  "versionId" : 11,
   "environments" : [ "aa", "bb" ],
-  "branchStatus" : "pending_approval",
-  "generatedAt" : "2026-06-04T15:33:59.793953429Z",
+  "branchStatus" : "draft",
+  "generatedAt" : "2026-06-04T17:26:35.372070417Z",
   "sourceCommitHash" : null,
-  "versionName" : "v1.2.1",
+  "versionName" : "v1.2.8",
   "sourceRepositoryUrl" : "https://github.com/framework-project-examples/micronaut-4.4.2-java-17-gradle-8.7.git",
-  "csarUrl" : "file:///tmp/g-finops-csar/Micronaut442/v3/app.csar",
   "physicalTemplates" : [ {
     "environmentName" : "aa",
     "id" : "c3393724-2897-4115-adb3-36174569501d"
