@@ -1,0 +1,122 @@
+---
+nodes:
+  a:
+    id: "f96f1d05-bf76-4b83-ba85-bc8f0c2e2308"
+    name: "a"
+    label: null
+    type: "cloud_native.nodes.aws.ComputeNode"
+    position:
+      x: 110
+      "y": 60
+    ui:
+      label: "a"
+      icon: "application"
+      color: "#Z4A90E2"
+    properties:
+      finops:
+        team: "My team"
+        owner: ""
+        project: "test"
+        compliance: ""
+        application: "a"
+        cost_center: "My CC"
+        environment: "develop"
+        managed_via: "G-FinOps"
+        organizational_unit: ""
+      env_vars: {}
+      containers:
+      - name: "a"
+        image: "a:latest"
+        ports:
+        - name: "web"
+          port: "8080"
+          target_port: "8080"
+        env_vars: {}
+        resources:
+          cpu_max: "300m"
+          cpu_min: "50m"
+          mem_max: "128Mi"
+          mem_min: "64Mi"
+        liveness_probe:
+          port: ""
+          http_path: ""
+          period_seconds: ""
+          timeout_seconds: ""
+          failure_threshold: ""
+          initial_delay_seconds: ""
+        readiness_probe:
+          port: ""
+          http_path: ""
+          period_seconds: ""
+          timeout_seconds: ""
+          failure_threshold: ""
+          initial_delay_seconds: ""
+      scalability:
+        max_instances: ""
+        min_instances: ""
+        default_instances: ""
+        target_cpu_utilization: ""
+        target_mem_utilization: ""
+      config_files: {}
+      workload_type: ""
+      scheduling_mode: ""
+      update_strategy:
+        strategy: ""
+        max_surge: ""
+        max_unavailable: ""
+      admin_credential:
+        keys: {}
+        user: ""
+        token: ""
+        protocol: ""
+        token_type: ""
+      component_version: ""
+      additional_metadata: {}
+    requirements:
+    - id: "d55f462e-a7e0-4bd9-acdd-1928b25fa692"
+      relationshipType: "tosca.relationships.ConnectsTo"
+      allowMultiple: null
+      validTargetCategories: []
+      ui: null
+  BackingService:
+    id: "6a7eb57f-525f-4b57-afc1-64d180b4b99e"
+    name: "BackingService"
+    label: null
+    type: "cloud_native.nodes.Kubernetes.KubernetesDependency"
+    position:
+      x: 390
+      "y": 60
+    ui:
+      label: "BackingService"
+      icon: "microservice"
+      color: "#a8385d"
+    properties:
+      env_vars: {}
+      containers: []
+      config_files: {}
+      workload_type: "stateless"
+      scheduling_mode: "flexible"
+      additional_metadata: {}
+      scheduling_requirements: []
+    requirements: []
+links:
+  a-BackingService:
+    id: "link-1779981608309"
+    type: "tosca.capabilities.Node"
+    source: "4a0c9cd1-d4e9-4955-b51f-88ab312cdfd8"
+    target: "b254312e-8467-4bd0-b822-8ea4b53e61cb"
+    ui:
+      label: "endpoint_link"
+      icon: "microservice"
+      color: "#05a0A5"
+    data: null
+solverMaxMemoryOccupationPercentage: 0.8
+solverMaxVcpuOccupationPercentage: 0.85
+filename: "carbon/all_providers_carbon_complete_revised.csv"
+filterEnabled: false
+maxTimeInSeconds: 60
+targetCloudCount: 3
+maxTotalCarbonFootprint: 1000000.0
+carbonOpportunityFactor: 1.0
+maximumGap: 0.05
+isMirroringEnabled: false
